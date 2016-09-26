@@ -12,10 +12,13 @@
 
 	icon = 'icons/eros/mob/Human_face.dmi'	  // default icon for all hairs
 
-	example
-		example
-		name = "Example"
-		icon_state = "example"
+	drilluu2
+		name = "Drilluu2"
+		icon_state = "drilluu2"
+
+	poofy2
+		name = "Poofy2"
+		icon_state = "poofy2"
 
 /*
 ///////////////////////////////////
