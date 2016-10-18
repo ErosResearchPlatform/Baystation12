@@ -452,7 +452,7 @@
 	new /obj/item/device/tape/random(src)
 	new /obj/item/device/tape/random(src)
 	new /obj/item/device/camera(src)
-	new /obj/item/toy/therapy_blue(src)
+	new /obj/item/toy/plushie/therapy_blue(src)
 	return
 
 /obj/structure/closet/secure_closet/virology
@@ -487,3 +487,27 @@
 	new /obj/item/device/healthanalyzer(src)
 	new /obj/item/clothing/glasses/hud/health(src)
 	return
+
+/obj/structure/closet/secure_closet/psychiatry
+	name = "Psychiatrist's locker"
+	desc = "Everything you need to keep the lunatics at bay."
+	icon_state = "securemed1"
+	icon_closed = "securemed"
+	icon_locked = "securemed1"
+	icon_opened = "securemedopen"
+	icon_broken = "securemedbroken"
+	icon_off = "securemedoff"
+	req_access = list(64)
+
+/obj/structure/closet/secure_closet/psychiatry/New()
+	..()
+	new /obj/item/clothing/suit/straight_jacket(src)
+	new /obj/item/weapon/reagent_containers/glass/bottle/stoxin(src)
+	new /obj/item/weapon/reagent_containers/syringe(src)
+	new /obj/item/weapon/storage/pill_bottle/citalopram(src)
+	new /obj/item/weapon/storage/pill_bottle/methylphenidate(src)
+	new /obj/item/weapon/storage/pill_bottle/paroxetine(src)
+	new /obj/item/clothing/under/rank/psych/turtleneck(src)
+	new /obj/item/clothing/under/rank/psych(src)
+	return
+
