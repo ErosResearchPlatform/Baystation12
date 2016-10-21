@@ -155,13 +155,15 @@
 #define WARNING_LOW_PRESSURE  50  // This is when the gray low pressure icon is displayed. (it is 2.5 * HAZARD_LOW_PRESSURE)
 #define  HAZARD_LOW_PRESSURE  20  // This is when the black ultra-low pressure icon is displayed. (This one is set as a constant)
 
-#define TEMPERATURE_DAMAGE_COEFFICIENT  1.5 // This is used in handle_temperature_damage() for humans, and in reagents that affect body temperature. Temperature damage is multiplied by this amount.
-#define BODYTEMP_AUTORECOVERY_DIVISOR   12  // This is the divisor which handles how much of the temperature difference between the current body temperature and 310.15K (optimal temperature) humans auto-regenerate each tick. The higher the number, the slower the recovery. This is applied each tick, so long as the mob is alive.
-#define BODYTEMP_AUTORECOVERY_MINIMUM   1   // Minimum amount of kelvin moved toward 310.15K per tick. So long as abs(310.15 - bodytemp) is more than 50.
-#define BODYTEMP_COLD_DIVISOR           6   // Similar to the BODYTEMP_AUTORECOVERY_DIVISOR, but this is the divisor which is applied at the stage that follows autorecovery. This is the divisor which comes into play when the human's loc temperature is lower than their body temperature. Make it lower to lose bodytemp faster.
-#define BODYTEMP_HEAT_DIVISOR           6   // Similar to the BODYTEMP_AUTORECOVERY_DIVISOR, but this is the divisor which is applied at the stage that follows autorecovery. This is the divisor which comes into play when the human's loc temperature is higher than their body temperature. Make it lower to gain bodytemp faster.
-#define BODYTEMP_COOLING_MAX           -30  // The maximum number of degrees that your body can cool down in 1 tick, when in a cold area.
-#define BODYTEMP_HEATING_MAX            30  // The maximum number of degrees that your body can heat up in 1 tick,   when in a hot  area.
+
+//Body temperature effects/heat tranfer coeffs.
+#define TEMPERATURE_DAMAGE_COEFFICIENT   1.5 // This is used in handle_temperature_damage() for humans, and in reagents that affect body temperature. Temperature damage is multiplied by this amount.
+#define BODYTEMP_AUTORECOVERY_DIVISOR    27   // This is the divisor which handles how much of the temperature difference between the current body temperature and 310.15K (optimal temperature) humans auto-regenerate each tick. The higher the number, the slower the recovery. This is applied each tick, so long as the mob is alive.
+#define BODYTEMP_AUTORECOVERY_MINIMUM    0.3  // Minimum amount of kelvin moved toward 310.15K per tick. So long as abs(310.15 - bodytemp) is more than 50.
+#define BODYTEMP_COLD_DIVISOR            9    // Similar to the BODYTEMP_AUTORECOVERY_DIVISOR, but this is the divisor which is applied at the stage that follows autorecovery. This is the divisor which comes into play when the human's loc temperature is lower than their body temperature. Make it lower to lose bodytemp faster.
+#define BODYTEMP_HEAT_DIVISOR            9    // Similar to the BODYTEMP_AUTORECOVERY_DIVISOR, but this is the divisor which is applied at the stage that follows autorecovery. This is the divisor which comes into play when the human's loc temperature is higher than their body temperature. Make it lower to gain bodytemp faster.
+#define BODYTEMP_COOLING_MAX            -30  // The maximum number of degrees that your body can cool down in 1 tick, when in a cold area.
+#define BODYTEMP_HEATING_MAX             30  // The maximum number of degrees that your body can heat up in 1 tick,   when in a hot  area.
 
 #define BODYTEMP_HEAT_DAMAGE_LIMIT 360.15 // The limit the human body can take before it starts taking damage from heat.
 #define BODYTEMP_COLD_DAMAGE_LIMIT 260.15 // The limit the human body can take before it starts taking damage from coldness.
@@ -181,6 +183,25 @@
 #define      GLOVES_MAX_HEAT_PROTECTION_TEMPERATURE 1500  // For some gloves.
 #define        SHOE_MAX_HEAT_PROTECTION_TEMPERATURE 1500  // For shoes.
 
+/**********************************************************************************************************\
+ * Had to change these to cope with the faster tickrate we used. (Bay is dev'd for 0.9, as compared to 0.4)
+ * The original values are as follows, in case we ever need these.
+ *
+ * The current values are were based on multing the previous values by the ratio of tickrates,
+ * followed by generous hand adjustment. Yell at me if there is any more weird behavior, please.
+ *
+ * TEMPERATURE_DAMAGE_COEFFICIENT  1.5
+ * BODYTEMP_AUTORECOVERY_DIVISOR   12
+ * BODYTEMP_AUTORECOVERY_MINIMUM   1
+ * BODYTEMP_COLD_DIVISOR           6
+ * BODYTEMP_HEAT_DIVISOR           6
+ * BODYTEMP_COOLING_MAX           -30
+ * #define BODYTEMP_HEATING_MAX    30
+ *
+ * -Alice
+ *
+\**********************************************************************************************************/
+
 // Fire.
 #define FIRE_MIN_STACKS          -20
 #define FIRE_MAX_STACKS           25
@@ -188,7 +209,7 @@
 
 #define THROWFORCE_SPEED_DIVISOR    5  // The throwing speed value at which the throwforce multiplier is exactly 1.
 #define THROWNOBJ_KNOCKBACK_SPEED   15 // The minumum speed of a w_class 2 thrown object that will cause living mobs it hits to be knocked back. Heavier objects can cause knockback at lower speeds.
-#define THROWNOBJ_KNOCKBACK_DIVISOR 2  // Affects how much speed the mob is knocked back with.
+#define THROWNOBJ_KNOCKBACK_DIVISOR 2  // Affects how much speed the mob is knocked back with
 
 // Suit sensor levels
 #define SUIT_SENSOR_OFF      0
@@ -215,23 +236,6 @@
 	7 - things that are large enough to contain humans, like closets, but smaller than entire turfs
 	8 - things that take up an entire turf, like wall girders or door assemblies
 */
-#define TINY_ITEM   1
-#define SMALL_ITEM  2
-#define NORMAL_ITEM 3
-#define LARGE_ITEM  4
-#define BULKY_ITEM  5
-
-#define base_storage_cost(w_class) (2**(w_class-1)) //1,2,4,8,16,...
-
-#define DO_NOT_STORE INFINITY //A special storage "cost" that indicates an item should not be storable
-
-//linear increase. Using many small storage containers is more space-efficient than using large ones,
-//in exchange for being limited in the w_class of items that will fit
-#define base_storage_capacity(w_class) (7*(w_class-1))
-
-#define DEFAULT_BACKPACK_STORAGE base_storage_capacity(5)
-#define DEFAULT_LARGEBOX_STORAGE base_storage_capacity(4)
-#define DEFAULT_BOX_STORAGE      base_storage_capacity(3)
 
 var/list/default_onmob_icons = list(
 		slot_l_hand_str = 'icons/mob/items/lefthand.dmi',
