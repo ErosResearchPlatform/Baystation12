@@ -586,27 +586,18 @@
 		name = "Cat Tail, Up"
 		icon_state = "kittyup"
 
-	tal_fox_cross
-		name = "Fox Tail, Cross"
-		icon_state = "crossfox"
-
 	tal_mouse
 		name = "Mouse Tail"
 		icon_state = "mouse"
 		do_colouration = 0
 
-	tal_mouse_c
+	tal_mouse_alt
 		name = "Mouse Tail (Colorable)"
-		icon_state = "mouse_c"
+		icon_state = "mouse_alt"
 
-	tal_deathclaw
-		name = "Deathclaw Tail"
-		icon_state = "deathclaw"
-		do_colouration = 0
-
-	tal_deathclaw_c
-		name = "Deathclaw Tail (Colorable)"
-		icon_state = "deathclaw_c"
+	tal_spiny
+		name = "Spiny Tail"
+		icon_state = "spiny"
 
 	tal_kitsune
 		name = "Kitsune Tails"
@@ -616,13 +607,17 @@
 		name = "Squirrel Tail"
 		icon_state = "squirrel"
 
+	tal_squirrel_alt
+		name = "Squirrel Tail (Alternate)"
+		icon_state = "squirrel_alt"
+
 	tal_tiger
 		name = "Tiger Tail"
 		icon_state = "tiger"
 
 	tal_tiger_striped
-		name = "Tiger Tail, Striped"
-		icon_state = "stripeytiger"
+		name = "Tiger Tail (Alternate)"
+		icon_state = "tiger_alt"
 
 	tal_wolf
 		name = "Wolf Tail"
@@ -632,17 +627,12 @@
 		name = "Fox Tail"
 		icon_state = "fox"
 
-	tal_xeno
-		name = "Xenomorph Tail"
-		icon_state = "xeno"
-		do_colouration = 0
+	tal_fox_alt
+		name = "Fox Tail (Alternate)"
+		icon_state = "fox_alt"
 
-	tal_xeno_c
-		name = "Xenomorph Tail (Colorable)"
-		icon_state = "xeno_c"
-
-	tal_dog
-		name = "Dog Tail"
+	tal_corgi
+		name = "Corgi Tail"
 		icon_state = "corgi"
 
 	tal_tajara
@@ -656,10 +646,6 @@
 	tal_sharktail
 		name = "Akula Tail"
 		icon_state = "sharktail"
-
-	tal_succubus
-		name = "Succubus Tail"
-		icon_state = "succubus"
 
 	tal_bee
 		name = "Bee Stinger"
@@ -679,12 +665,7 @@
 
 	tal_demon
 		name = "Demon Tail"
-		icon_state = "demon_c"
-
-	tal_demon_c
-		name = "Demon Tail, Red"
 		icon_state = "demon"
-		do_colouration = 0
 
 	tal_scorpius
 		name = "Scorpius FBP Tail"
