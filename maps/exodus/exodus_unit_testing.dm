@@ -26,10 +26,12 @@
 		/area/maintenance/portsolar = NO_SCRUBBER,
 		/area/maintenance/research_port = 0,
 		/area/maintenance/research_starboard = NO_SCRUBBER,
+		/area/maintenance/security_port = NO_SCRUBBER,
 		/area/maintenance/starboardsolar = NO_SCRUBBER,
 		/area/maintenance/substation/command = 0,
 		/area/mine/explored = NO_SCRUBBER|NO_VENT,
 		/area/mine/unexplored = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/outpost/abandoned = NO_APC,
 		/area/outpost/mining_main/maintenance = NO_SCRUBBER|NO_VENT,
 		/area/rescue_base = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/rnd/test_area = NO_SCRUBBER|NO_VENT,
@@ -47,6 +49,7 @@
 
 	area_coherency_test_exempt_areas = list(
 			/area/space,
+			/area/maintenance/arrivals,
 			/area/mine/explored,
 			/area/mine/unexplored,
 			/area/centcom/control,
