@@ -44,7 +44,6 @@
 		/area/storage/emergency2 = NO_SCRUBBER|NO_VENT,
 		/area/supply = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/syndicate_station = NO_SCRUBBER|NO_VENT|NO_APC,
-		/area/maintenance/exterior = NO_SCRUBBER|NO_VENT|NO_APC
 	)
 
 	area_coherency_test_exempt_areas = list(
@@ -57,5 +56,4 @@
 			/area/constructionsite,
 			/area/constructionsite/maintenance,
 			/area/solar/constructionsite,
-			/area/maintenance/exterior,
 			/area/maintenance/incinerator)
