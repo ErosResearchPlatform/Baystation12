@@ -419,10 +419,6 @@
 	name = "\improper Security Maintenance - Starboard"
 	icon_state = "maint_security_starboard"
 
-/area/maintenance/exterior
-	name = "\improper Exterior Reinforcements"
-	icon_state = "maint_security_starboard"
-
 // Hallway
 
 /area/hallway/primary/
@@ -536,11 +532,6 @@
 	icon_state = "bar"
 	sound_env = LARGE_SOFTFLOOR
 
-/area/crew_quarters/nightclub
-	name = "\improper Nightclub"
-	icon_state = "bar"
-	sound_env = LARGE_SOFTFLOOR
-
 /area/library
  	name = "\improper Library"
  	icon_state = "library"
@@ -548,6 +539,10 @@
 
 /area/chapel/office
 	name = "\improper Chapel Office"
+	icon_state = "chapeloffice"
+
+/area/chapel/office/crematorium
+	name = "\improper Crematorium"
 	icon_state = "chapeloffice"
 
 /area/lawoffice
@@ -783,6 +778,16 @@
 
 /area/quartermaster/storage
 	name = "\improper Warehouse"
+	icon_state = "quartstorage"
+	sound_env = LARGE_ENCLOSED
+
+/area/quartermaster/abandonedstorage
+	name = "\improper Abandoned Warehouse"
+	icon_state = "quartstorage"
+	sound_env = LARGE_ENCLOSED
+
+/area/quartermaster/portstarboardstorage
+	name = "\improper Port Starboard Storage"
 	icon_state = "quartstorage"
 	sound_env = LARGE_ENCLOSED
 
