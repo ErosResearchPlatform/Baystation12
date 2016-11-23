@@ -10,7 +10,7 @@
 	#include "../../code/modules/lobby_music/dilbert.dm"
 	#include "../../code/modules/lobby_music/space_oddity.dm"
 
-	#define USING_MAP_DATUM /datum/map/eros
+	#define USING_MAP_DATUM /datum/map/example
 
 #elif !defined(MAP_OVERRIDE)
 

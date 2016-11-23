@@ -1,6 +1,6 @@
 
 /datum/map/eros
-	name = "Eros"
+	name = "Eros-1"
 	full_name = "Eros Test Station"
 	path = "eros"
 
