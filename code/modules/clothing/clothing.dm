@@ -114,17 +114,17 @@
 	w_class = ITEM_SIZE_TINY
 	throwforce = 2
 	slot_flags = SLOT_EARS
-	sprite_sheets = list(\
+	sprite_sheets = list(
 		"Human" = 'icons/mob/ears.dmi',
 		"Machine" = 'icons/mob/ears.dmi',
 		"Drider" = 'icons/mob/ears.dmi',
 		"Lamia" = 'icons/mob/ears.dmi',
-		"Unathi" = 'icons/mob/species/unathi/ears.dmi',
-		"Tajara" = 'icons/mob/species/tajaran/ears.dmi',
-		"Skrell" = 'icons/mob/species/skrell/ears.dmi',
+		"Unathi" = 'icons/mob/ears.dmi',
+		"Tajara" = 'icons/mob/ears.dmi',
+		"Skrell" = 'icons/mob/ears.dmi',
 		"Resomi" = 'icons/mob/species/resomi/ears.dmi',
-		"Akula" = 'icons/mob/species/akula/ears.dmi',
-		"Slime" = 'icons/mob/species/slime/ears.dmi'
+		"Akula" = 'icons/mob/ears.dmi',
+		"Slime" = 'icons/mob/ears.dmi'
 		)
 
 /obj/item/clothing/ears/update_clothing_icon()
@@ -187,17 +187,17 @@ BLIND     // can't see anything
 	var/vision_flags = 0
 	var/darkness_view = 0//Base human is 2
 	var/see_invisible = -1
-	sprite_sheets = list(\
+	sprite_sheets = list(
 		"Human" = 'icons/mob/eyes.dmi',
 		"Machine" = 'icons/mob/eyes.dmi',
 		"Drider" = 'icons/mob/eyes.dmi',
 		"Lamia" = 'icons/mob/eyes.dmi',
-		"Unathi" = 'icons/mob/species/unathi/eyes.dmi',
-		"Tajara" = 'icons/mob/species/tajaran/eyes.dmi',
-		"Skrell" = 'icons/mob/species/skrell/eyes.dmi',
+		"Unathi" = 'icons/mob/eyes.dmi',
+		"Tajara" = 'icons/mob/eyes.dmi',
+		"Skrell" = 'icons/mob/eyes.dmi',
 		"Resomi" = 'icons/mob/species/resomi/eyes.dmi',
-		"Akula" = 'icons/mob/species/akula/eyes.dmi',
-		"Slime" = 'icons/mob/species/slime/eyes.dmi'
+		"Akula" = 'icons/mob/eyes.dmi',
+		"Slime" = 'icons/mob/eyes.dmi'
 		)
 
 /obj/item/clothing/glasses/get_mob_overlay(mob/user_mob, slot)
@@ -228,17 +228,18 @@ BLIND     // can't see anything
 	slot_flags = SLOT_GLOVES
 	attack_verb = list("challenged")
 	species_restricted = list("exclude","Unathi","Tajara", "Vox")
-	sprite_sheets = list(\
+	sprite_sheets = list(
 		"Human" = 'icons/mob/hands.dmi',
 		"Machine" = 'icons/mob/hands.dmi',
 		"Drider" = 'icons/mob/hands.dmi',
 		"Lamia" = 'icons/mob/hands.dmi',
-		"Unathi" = 'icons/mob/species/unathi/gloves.dmi',
-		"Tajara" = 'icons/mob/species/tajaran/gloves.dmi',
-		"Skrell" = 'icons/mob/species/skrell/gloves.dmi',
+		"Unathi" = 'icons/mob/hands.dmi',
+		"Tajara" = 'icons/mob/hands.dmi',
+		"Skrell" = 'icons/mob/hands.dmi',
 		"Resomi" = 'icons/mob/species/resomi/gloves.dmi',
-		"Akula" = 'icons/mob/species/akula/gloves.dmi',
-		"Slime" = 'icons/mob/species/slime/gloves.dmi'
+		"Akula" = 'icons/mob/hands.dmi',
+		"Slime" = 'icons/mob/hands.dmi',
+		"Vox" = 'icons/mob/species/vox/gloves.dmi'
 		)
 	blood_overlay_type = "bloodyhands"
 
@@ -303,17 +304,18 @@ BLIND     // can't see anything
 	var/light_applied
 	var/brightness_on
 	var/on = 0
-	sprite_sheets = list(\
+	sprite_sheets = list(
 		"Human" = 'icons/mob/head.dmi',
 		"Machine" = 'icons/mob/head.dmi',
 		"Drider" = 'icons/mob/head.dmi',
 		"Lamia" = 'icons/mob/head.dmi',
-		"Unathi" = 'icons/mob/species/unathi/head.dmi',
-		"Tajara" = 'icons/mob/species/tajaran/head.dmi',
-		"Skrell" = 'icons/mob/species/skrell/head.dmi',
+		"Unathi" = 'icons/mob/head.dmi',
+		"Tajara" = 'icons/mob/head.dmi',
+		"Skrell" = 'icons/mob/head.dmi',
 		"Resomi" = 'icons/mob/species/resomi/head.dmi',
-		"Akula" = 'icons/mob/species/akula/head.dmi',
-		"Slime" = 'icons/mob/species/slime/head.dmi'
+		"Akula" = 'icons/mob/head.dmi',
+		"Slime" = 'icons/mob/head.dmi',
+		"Vox" = 'icons/mob/species/vox/head.dmi'
 		)
 	blood_overlay_type = "helmetblood"
 
@@ -423,17 +425,17 @@ BLIND     // can't see anything
 	slot_flags = SLOT_MASK
 	body_parts_covered = FACE|EYES
 	sprite_sheets = list(
-	sprite_sheets = list(\
 		"Human" = 'icons/mob/mask.dmi',
 		"Machine" = 'icons/mob/mask.dmi',
 		"Drider" = 'icons/mob/mask.dmi',
 		"Lamia" = 'icons/mob/mask.dmi',
-		"Unathi" = 'icons/mob/species/unathi/masks.dmi',
-		"Tajara" = 'icons/mob/species/tajaran/masks.dmi',
-		"Skrell" = 'icons/mob/species/skrell/masks.dmi',
+		"Unathi" = 'icons/mob/species/unathi/mask.dmi',
+		"Tajara" = 'icons/mob/species/tajaran/mask.dmi',
+		"Skrell" = 'icons/mob/mask.dmi',
 		"Resomi" = 'icons/mob/species/resomi/masks.dmi',
-		"Akula" = 'icons/mob/species/akula/masks.dmi',
-		"Slime" = 'icons/mob/species/slime/masks.dmi'
+		"Akula" = 'icons/mob/species/akula/mask.dmi',
+		"Slime" = 'icons/mob/mask.dmi',
+		"Vox" = 'icons/mob/species/vox/masks.dmi'
 		)
 
 	var/voicechange = 0
@@ -475,17 +477,18 @@ BLIND     // can't see anything
 	force = 2
 	var/overshoes = 0
 	species_restricted = list("exclude","Vox")
-	sprite_sheets = list(\
+	sprite_sheets = list(
 		"Human" = 'icons/mob/feet.dmi',
 		"Machine" = 'icons/mob/feet.dmi',
 		"Drider" = 'icons/mob/feet.dmi',
 		"Lamia" = 'icons/mob/feet.dmi',
-		"Unathi" = 'icons/mob/species/unathi/shoes.dmi',
-		"Tajara" = 'icons/mob/species/tajaran/shoes.dmi',
-		"Skrell" = 'icons/mob/species/skrell/shoes.dmi',
+		"Unathi" = 'icons/mob/feet.dmi',
+		"Tajara" = 'icons/mob/feet.dmi',
+		"Skrell" = 'icons/mob/feet.dmi',
 		"Resomi" = 'icons/mob/species/resomi/shoes.dmi',
-		"Akula" = 'icons/mob/species/akula/shoes.dmi',
-		"Slime" = 'icons/mob/species/slime/shoes.dmi'
+		"Akula" = 'icons/mob/feet.dmi',
+		"Slime" = 'icons/mob/feet.dmi',
+		"Vox" = 'icons/mob/species/vox/shoes.dmi'
 		)
 
 	blood_overlay_type = "shoeblood"
@@ -562,7 +565,6 @@ BLIND     // can't see anything
 	w_class = ITEM_SIZE_NORMAL
 
 	sprite_sheets = list(
-	sprite_sheets = list(\
 		"Human" = 'icons/mob/suit.dmi',
 		"Machine" = 'icons/mob/suit.dmi',
 		"Drider" = 'icons/mob/suit.dmi',
@@ -617,17 +619,17 @@ BLIND     // can't see anything
 	var/rolled_down = -1 //0 = unrolled, 1 = rolled, -1 = cannot be toggled
 	var/rolled_sleeves = -1 //0 = unrolled, 1 = rolled, -1 = cannot be toggled
 	sprite_sheets = list(
-	sprite_sheets = list(\
 		"Human" = 'icons/mob/uniform.dmi',
 		"Machine" = 'icons/mob/uniform.dmi',
 		"Drider" = 'icons/mob/uniform.dmi',
 		"Lamia" = 'icons/mob/uniform.dmi',
-		"Unathi" = 'icons/mob/species/unathi/uniform.dmi',
-		"Tajara" = 'icons/mob/species/tajaran/uniform.dmi',
-		"Skrell" = 'icons/mob/species/skrell/uniform.dmi',
+		"Unathi" = 'icons/mob/uniform.dmi',
+		"Tajara" = 'icons/mob/uniform.dmi',
+		"Skrell" = 'icons/mob/uniform.dmi',
 		"Resomi" = 'icons/mob/species/resomi/uniform.dmi',
-		"Akula" = 'icons/mob/species/akula/uniform.dmi',
-		"Slime" = 'icons/mob/species/slime/uniform.dmi'
+		"Akula" = 'icons/mob/uniform.dmi',
+		"Slime" = 'icons/mob/uniform.dmi',
+		"Vox" = 'icons/mob/species/vox/uniform.dmi'
 		)
 
 	//convenience var for defining the icon state for the overlay used when the clothing is worn.
