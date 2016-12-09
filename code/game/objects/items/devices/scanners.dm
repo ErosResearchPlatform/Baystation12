@@ -142,14 +142,10 @@ REAGENT SCANNER
 		user.show_message("<span class='warning'>Severe brain damage detected. Subject likely to have a traumatic brain injury.</span>")
 	else if (M.getBrainLoss() >= 10)
 		user.show_message("<span class='warning'>Significant brain damage detected. Subject may have had a concussion.</span>")
-	if(iscarbon(M))
-		var/mob/living/carbon/C = M
-		if(C.stomach_contents.len)
-			user.show_message("<span class='warning'>Foreign body detected in subject's stomach.</span>")
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		for(var/name in H.organs_by_name)
-			var/obj/item/organ/external/e = H.get_organ(name)
+			var/obj/item/organ/external/e = H.organs_by_name[name]
 			if(!e)
 				continue
 			var/limb = e.name
@@ -163,7 +159,7 @@ REAGENT SCANNER
 			user.show_message("<span class='notice'>Subject has a neural lace implant.</span>")
 
 		for(var/name in H.organs_by_name)
-			var/obj/item/organ/external/e = H.get_organ(name)
+			var/obj/item/organ/external/e = H.organs_by_name[name]
 			if(e && e.status & ORGAN_BROKEN)
 				user.show_message(text("<span class='warning'>Bone fractures detected. Advanced scanner required for location.</span>"), 1)
 				break
@@ -345,35 +341,43 @@ REAGENT SCANNER
 	matter = list(DEFAULT_WALL_MATERIAL = 30,"glass" = 20)
 
 /obj/item/device/slime_scanner/attack(mob/living/M as mob, mob/living/user as mob)
-	if (!isslime(M))
-		to_chat(user, "<B>This device can only scan slimes!</B>")
+	if(!isslime(M))
+		to_chat(user, "This device can only scan slimes.")
 		return
 	var/mob/living/carbon/slime/T = M
-	user.show_message("Slime scan results:")
-	user.show_message(text("[T.colour] [] slime", T.is_adult ? "adult" : "baby"))
-	user.show_message(text("Nutrition: [T.nutrition]/[]", T.get_max_nutrition()))
-	if (T.nutrition < T.get_starve_nutrition())
-		user.show_message("<span class='alert'>Warning: slime is starving!</span>")
+	user.show_message("<span class='notice'>Slime scan result for \the [M]:</span>")
+	user.show_message("[T.colour] [T.is_adult ? "adult" : "baby"] slime")
+	user.show_message("Nutrition: [T.nutrition]/[T.get_max_nutrition()]")
+	if(T.nutrition < T.get_starve_nutrition())
+		user.show_message("<span class='alert'>Warning: the slime is starving!</span>")
 	else if (T.nutrition < T.get_hunger_nutrition())
-		user.show_message("<span class='warning'>Warning: slime is hungry</span>")
-	user.show_message("Electric change strength: [T.powerlevel]")
-	user.show_message("Health: [T.health]")
-	if (T.slime_mutation[4] == T.colour)
-		user.show_message("This slime does not evolve any further")
+		user.show_message("<span class='warning'>Warning: the slime is hungry.</span>")
+	user.show_message("Electric charge strength: [T.powerlevel]")
+	user.show_message("Health: [round(T.health / T.maxHealth)]%")
+
+	var/list/mutations = T.GetMutations()
+
+	if(!mutations.len)
+		user.show_message("This slime will never mutate.")
 	else
-		if (T.slime_mutation[3] == T.slime_mutation[4])
-			if (T.slime_mutation[2] == T.slime_mutation[1])
-				user.show_message(text("Possible mutation: []", T.slime_mutation[3]))
-				user.show_message("Genetic destability: [T.mutation_chance/2]% chance of mutation on splitting")
+		var/list/mutationChances = list()
+		for(var/i in mutations)
+			if(i == T.colour)
+				continue
+			if(mutationChances[i])
+				mutationChances[i] += T.mutation_chance / mutations.len
 			else
-				user.show_message(text("Possible mutations: [], [], [] (x2)", T.slime_mutation[1], T.slime_mutation[2], T.slime_mutation[3]))
-				user.show_message("Genetic destability: [T.mutation_chance]% chance of mutation on splitting")
-		else
-			user.show_message(text("Possible mutations: [], [], [], []", T.slime_mutation[1], T.slime_mutation[2], T.slime_mutation[3], T.slime_mutation[4]))
-			user.show_message("Genetic destability: [T.mutation_chance]% chance of mutation on splitting")
+				mutationChances[i] = T.mutation_chance / mutations.len
+
+		var/list/mutationTexts = list("[T.colour] ([100 - T.mutation_chance]%)")
+		for(var/i in mutationChances)
+			mutationTexts += "[i] ([mutationChances[i]]%)"
+
+		user.show_message("Possible colours on splitting: [english_list(mutationTexts)]")
+
 	if (T.cores > 1)
-		user.show_message("Anomalious slime core amount detected")
-	user.show_message("Growth progress: [T.amount_grown]/10")
+		user.show_message("Anomalious slime core amount detected.")
+	user.show_message("Growth progress: [T.amount_grown]/10.")
 
 /obj/item/device/price_scanner
 	name = "price scanner"
