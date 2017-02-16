@@ -54,6 +54,22 @@
 		return good
 	return rest
 
+/datum/relation/in_crush
+	name = "Crush"
+	desc = "You find them likeable."
+	can_connect_to = list("Is Crush")
+
+/datum/relation/in_crush/get_desc_string()
+	return "[other.holder] appears to be an object of affection of [holder]."
+
+/datum/relation/is_crush
+	name = "Is Crush"
+	desc = "You suspect, that you are liked by them."
+	can_connect_to = list("Crush")
+
+/datum/relation/is_crush/get_desc_string()
+	return "[holder] appears to be an object of affection of [other.holder]."
+
 /datum/relation/ex
 	name = "Ex"
 	desc = "You used to be romantically involved, but not anymore."
@@ -67,3 +83,26 @@
 
 /datum/relation/spessnam/get_desc_string()
 	return "[holder] and [other.holder] served in military together at some point in the past."
+
+/datum/relation/spesscollege
+	name = "Classmate"
+	desc = "You used to be in one class with them."
+
+/datum/relation/spesscollege/get_desc_string()
+	return "[holder] and [other.holder] were pupils in one class."
+
+/datum/relation/neighbour
+	name = "Neighbour"
+	desc = "You appear to live nearby them."
+	incompatible = list("Housemate")
+
+/datum/relation/neighbour/get_desc_string()
+	return "[holder] and [other.holder] appears to be neighbours."
+
+/datum/relation/housemate
+	name = "Housemate"
+	desc = "You are living in one house/apartment."
+	incompatible = list("Neighbour")
+
+/datum/relation/housemate/get_desc_string()
+	return "[holder] and [other.holder] seems to sharing same home."
