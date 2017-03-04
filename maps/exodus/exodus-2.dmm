@@ -3133,7 +3133,7 @@
 "bim" = (/obj/structure/disposalpipe/segment,/turf/simulated/floor/tiled,/area/hydroponics/garden)
 "bin" = (/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled,/area/hydroponics/garden)
 "bio" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 1},/turf/simulated/floor/tiled,/area/hydroponics/garden)
-"bip" = (/obj/effect/floor_decal/corner/lime{dir = 6},/obj/machinery/seed_storage/garden,/turf/simulated/floor/tiled,/area/hydroponics)
+"bip" = (/obj/effect/floor_decal/corner/lime{dir = 6},/obj/machinery/seed_storage/garden,/turf/simulated/floor/tiled,/area/hydroponics/garden)
 "biq" = (/obj/machinery/vending/hydronutrients,/turf/simulated/floor/grass,/area/hydroponics/garden)
 "bir" = (/obj/structure/flora/grass/brown,/turf/simulated/floor/grass,/area/hydroponics/garden)
 "bis" = (/obj/structure/disposalpipe/segment,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/tiled,/area/hallway/primary/starboard)
