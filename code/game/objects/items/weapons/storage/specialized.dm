@@ -54,7 +54,7 @@
 	max_storage_space = 25
 	max_w_class = ITEM_SIZE_SMALL
 	w_class = ITEM_SIZE_NORMAL
-	can_hold = list(/obj/item/weapon/storage/pill_bottle,/obj/item/weapon/reagent_containers/glass/bottle)
+	can_hold = list(/obj/item/weapon/storage/pill_bottle,/obj/item/weapon/reagent_containers,/obj/item/stack/medical)
 	allow_quick_gather = 1
 	allow_quick_empty = 1
 	use_to_pickup = 1
